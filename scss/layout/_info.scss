@@ -1,0 +1,50 @@
+.myInfo {
+  padding: $pd-2 0;
+  margin: $mg-2 0;
+  background-color: $color-white-cream;
+
+  .item {
+    background-color: $color-white-0;
+    display: flex;
+    padding: 24px;
+    min-height: 164px;
+    i {
+      @include text($color-blue, $fs-4, $fw-bold);
+      margin-right: $mg-1;
+    }
+    .content {
+      h1 {
+        @include text($color-black-0, $fs-2 - 2, $fw-bold);
+      }
+      p {
+        @include text($color-gray-4, $fs-0 + 2, $fw-normal);
+      }
+    }
+  }
+
+  @include respond-to("extra-large") {
+    .item {
+      min-height: 186px;
+    }
+  }
+  @include respond-to("large") {
+    .item {
+      min-height: 212px;
+      flex-direction: column;
+      text-align: center;
+      padding: 12px;
+      i {
+        margin-bottom: $mg-1;
+      }
+    }
+  }
+  @include respond-to("medium") {
+    .row {
+      flex-direction: column !important;
+    }
+    .item {
+      min-height: 80px;
+      border-bottom: 2px solid $color-white-cream;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.myNonStudent {
+  background-color: $color-gray-5;
+  .item {
+    h1 {
+      @include text($color-black-0, $fs-2 - 1, $fw-bold-1);
+    }
+    p {
+      @include text($color-black-0, $fs-0 + 1, $fw-normal);
+    }
+  }
+  .col-nonstudent {
+    border-right: 1px solid $color-black-dark;
+  }
+
+  @include respond-to("medium") {
+    .item {
+      padding: 30px 0 !important;
+    }
+    .col-nonstudent {
+      border-right: none !important;
+    }
+  }
+}

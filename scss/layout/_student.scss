@@ -1,0 +1,17 @@
+.myStudent {
+  margin-top: $mg-2;
+  .content {
+    > h1 {
+      @include text($color-black-light, $fs-2, $fw-normal);
+    }
+  }
+
+  .card {
+    @include card-custom();
+    display: flex;
+    flex: 1 0 auto;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

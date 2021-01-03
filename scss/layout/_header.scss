@@ -1,0 +1,56 @@
+.myNavbar {
+  //left
+  .navbar-brand {
+    flex-grow: 1;
+    img {
+      width: 110px;
+    }
+  }
+  .categories {
+    flex-grow: 1;
+    @include text($color-black-light, $fs-1, $fw-normal);
+    opacity: 0.7;
+    cursor: pointer;
+  }
+  .input_search {
+    flex-grow: 5;
+
+    @include input();
+  }
+
+  //right
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        @include text($color-black-light, $fs-1, $fw-normal);
+        padding: $pd-1 $pd-2;
+      }
+      &:hover {
+        background-color: $color-gray-1;
+      }
+
+      .button {
+        flex-grow: 1;
+      }
+    }
+    .nav-item:last-child {
+      flex-flow: 1;
+    }
+  }
+
+  @include respond-to("extra-large") {
+    .navbar-nav {
+      .business,
+      .instructor {
+        display: none !important;
+      }
+    }
+  }
+
+  @include respond-to("medium") {
+    .categories,
+    .input_search {
+      display: none !important;
+    }
+  }
+}

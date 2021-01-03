@@ -1,0 +1,128 @@
+@mixin text($color, $fs, $fw) {
+  color: $color;
+  font-size: $fs;
+  font-weight: $fw;
+}
+
+@mixin button($color, $bg-color, $border-color, $fw, $bg-color-hover) {
+  color: $color;
+  font-weight: $fw;
+  background-color: $bg-color;
+  border: 1px solid $border-color;
+  &:hover {
+    background-color: $bg-color-hover;
+  }
+}
+
+@mixin input {
+  .form-control {
+    background-color: $color-gray-1;
+    border: none;
+    transition: none;
+    &:focus {
+      box-shadow: none;
+      background-color: $color-white-0;
+      border-top: 1px solid $color-gray-3;
+      border-left: 1px solid $color-gray-3;
+      border-bottom: 1px solid $color-gray-3;
+    }
+    &:focus + .input-group-prepend {
+      .input-group-text {
+        background-color: $color-white-0;
+        color: $color-red-0;
+        border: none;
+        border-top: 1px solid $color-gray-3;
+        border-right: 1px solid $color-gray-3;
+        border-bottom: 1px solid $color-gray-3;
+      }
+      &:hover {
+        .input-group-text {
+          background-color: $color-red-0;
+          color: $color-white-0;
+        }
+      }
+    }
+  }
+  .input-group-prepend {
+    cursor: pointer;
+    .input-group-text {
+      background-color: $color-gray-1;
+      color: $color-red-0;
+      border: none;
+    }
+    &:hover {
+      .input-group-text {
+        background-color: $color-red-0;
+        color: $color-white-0;
+      }
+    }
+  }
+}
+
+@mixin card-custom() {
+  cursor: pointer;
+  .course-img {
+    position: relative;
+  }
+  .img-overlay {
+    position: absolute;
+    display: none;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  &:hover {
+    .img-overlay {
+      display: block;
+    }
+  }
+
+  .card-title {
+    @include text($color-black-0, $fs-0, $fw-bold);
+  }
+  .card-text {
+    @include text($color-gray-4, $fs-1, $fw-normal);
+  }
+  .rating {
+    display: flex;
+    .rating-star {
+      @include text($color-yellow, $fs-1, $fw-normal);
+      margin-right: $mg-0;
+    }
+    p {
+      @include text($color-gray-4, $fs-1, $fw-bold-1);
+      margin-right: $mg-0;
+    }
+    span {
+      @include text($color-gray-4, $fs-1, $fw-normal);
+    }
+  }
+  .price {
+    text-align: right;
+    .old-price {
+      @include text($color-gray-4, $fs-1, $fw-normal);
+      text-decoration: line-through;
+    }
+    .new-price {
+      @include text($color-black-0, $fs-0, $fw-bold);
+    }
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($map: $breakpoints, $key: $breakpoint) {
+    $value: map-get(
+      $map: $breakpoints,
+      $key: $breakpoint,
+    );
+
+    @media screen and (max-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "sai roi";
+  }
+}

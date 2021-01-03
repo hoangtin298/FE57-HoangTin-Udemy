@@ -1,0 +1,83 @@
+.myFooter {
+  .footer-top {
+    border-bottom: 1px solid $color-black-dark;
+    .item {
+      list-style: none;
+      li {
+        height: 27.5px;
+        a {
+          @include text($color-blue, $fs-1, $fw-normal);
+          line-height: $line-height-0;
+          text-decoration: none;
+        }
+        .item-bold {
+          font-weight: $fw-bold-1;
+        }
+      }
+    }
+
+    .language-item {
+      button {
+        margin-left: auto;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 160px;
+        @include text($color-black-0, $fs-1, $fw-bold-1);
+        .fa-arrow-up {
+          margin-left: auto;
+        }
+        .fa-globe-asia {
+          margin-right: $mg-1;
+        }
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    .item-left {
+      img {
+        width: 100px;
+      }
+      P {
+        @include text($color-gray-4, $fs-1, $fw-normal);
+      }
+    }
+    .item-right {
+      a {
+        @include text($color-blue, $fs-1, $fw-normal);
+        line-height: $line-height-0;
+        text-decoration: none;
+
+        margin-right: $mg-2;
+        margin-bottom: $mg-1;
+      }
+      .item-hidden {
+        display: none;
+      }
+    }
+  }
+
+  @include respond-to("medium") {
+    .footer-top {
+      border-bottom: none;
+      .list-item {
+        display: none !important;
+      }
+    }
+    .footer-bottom {
+      .item-right {
+        flex-wrap: wrap;
+        margin-top: $mg-1;
+        justify-content: start !important;
+        .item-hidden {
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.myCover {
+  background: url("../img/cover.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 500px;
+
+  .content {
+    // margin-left: 80px;
+    max-width: 460px;
+    line-height: 32px;
+    h1 {
+      @include text($color-white-0, $fs-4, $fw-bold);
+    }
+    p {
+      @include text($color-white-0, $fs-2 - 2, $fw-normal);
+    }
+
+    .input_search {
+      @include input();
+      .form-control {
+        background-color: $color-white-0;
+        font-size: $fs-2;
+        font-weight: 300;
+      }
+      .input-group-text {
+        background-color: $color-white-0 !important;
+        &:hover {
+          background-color: $color-red-0 !important;
+          color: $color-white-0 !important;
+        }
+      }
+    }
+  }
+
+  @include respond-to("medium") {
+    .content {
+      //   margin-left: 40px;
+    }
+  }
+  @include respond-to("small") {
+    height: 300px;
+    .content {
+      //   margin-left: 20px;
+      h1 {
+        font-size: $fs-3;
+        max-width: 50%;
+      }
+      p {
+        max-width: 50%;
+      }
+      .input_search {
+        max-width: 90%;
+      }
+    }
+  }
+}

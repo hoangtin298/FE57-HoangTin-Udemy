@@ -1,0 +1,12 @@
+.myPartner {
+  background-color: $color-gray-5;
+  .title {
+    @include text($color-gray-4, $fs-1, $fw-normal);
+    margin-bottom: $mg-2;
+  }
+
+  .item {
+    text-align: center;
+    margin-bottom: $mg-2;
+  }
+}

@@ -1,0 +1,22 @@
+.btn-white {
+  @include button(
+    $color-gray-4,
+    $color-white-0,
+    $color-black-light,
+    $fw-bold-0,
+    $color-gray-1
+  );
+}
+
+.btn-red {
+  @include button(
+    $color-white-0,
+    $color-red-0,
+    $color-red-0,
+    $fw-bold-0,
+    $color-red-1
+  );
+  &:hover {
+    color: $color-white-0;
+  }
+}

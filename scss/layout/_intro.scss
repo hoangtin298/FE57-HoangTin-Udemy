@@ -1,0 +1,36 @@
+.myIntro {
+  background-image: linear-gradient(to right, $color-red-1, $color-red-0);
+  .item {
+    i {
+      @include text($color-white-0, 50px, $fw-bold);
+    }
+    .content {
+      p {
+        @include text($color-white-0, $fs-0 + 2, $fw-bold);
+      }
+      span {
+        @include text($color-white-0, $fs-0, $fw-normal);
+      }
+    }
+  }
+
+  @include respond-to("extra-large") {
+    .row:first-child {
+      padding-left: 0 !important;
+    }
+    .item {
+      i {
+        display: none;
+      }
+      .content {
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @include respond-to("medium") {
+    display: none;
+  }
+}

@@ -1,0 +1,67 @@
+// same height items in owl
+.owl-carousel .owl-stage {
+  display: flex;
+}
+
+.owl-prev {
+  position: absolute;
+  top: 33%;
+  left: -4%;
+
+  width: 45px;
+  height: 45px;
+  border-radius: 50% !important;
+
+  background-color: $color-white-0 !important;
+  box-shadow: 0 2px 8px 2px rgba(20, 23, 28, 0.1);
+
+  z-index: 10;
+
+  span {
+    @include text($color-blue, $fs-4, $fw-normal);
+    line-height: 0.6;
+  }
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.owl-next {
+  @extend .owl-prev;
+  left: unset;
+  right: -4%;
+}
+
+.myStudent {
+  .viewing {
+    position: relative;
+  }
+  .owl-prev {
+    @extend .owl-prev;
+    left: unset;
+    left: -3%;
+  }
+  .owl-next {
+    @extend .owl-next;
+    right: unset;
+    left: unset;
+    right: -3%;
+  }
+}
+
+.myReview {
+  .review__item {
+    position: relative;
+  }
+  .owl-prev {
+    @extend .owl-prev;
+    left: unset;
+    left: -3%;
+  }
+  .owl-next {
+    @extend .owl-next;
+    right: unset;
+    left: unset;
+    right: -3%;
+  }
+}

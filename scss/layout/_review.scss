@@ -1,0 +1,43 @@
+.myReview {
+  background-color: $color-gray-5;
+  .title {
+    @include text($color-black-0, $fs-3, $fw-bold-1);
+  }
+
+  .review__item {
+    .item {
+      background-color: $color-white-0;
+      padding: 24px;
+      border: 1px solid $color-black-dark;
+
+      display: flex;
+      flex: 1 0 auto;
+      height: 100%;
+      flex-direction: column;
+
+      .introduce {
+        img {
+          height: 64px;
+          width: 64px;
+          border-radius: 50%;
+        }
+        h1 {
+          @include text($color-black-0, $fs-0 + 1, $fw-bold-1);
+        }
+      }
+      .content {
+        p {
+          @include text($color-black-0, $fs-0 + 1, $fw-normal);
+          line-height: $line-height-0;
+        }
+      }
+    }
+  }
+
+  @include respond-to("small") {
+    .title {
+      text-align: center;
+      margin: 0 -30px !important;
+    }
+  }
+}
