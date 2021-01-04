@@ -1470,5 +1470,14 @@
         });
       });
     </script>
+    <script>
+      $(window).scroll(function () {
+        if ($(window).scrollTop() > 500) {
+          $(".myNavbar").addClass("headerClass");
+        } else {
+          $(".myNavbar").removeClass("headerClass");
+        }
+      });
+    </script>
   </body>
 </html>

@@ -12,6 +12,18 @@ body {
   line-height: 1.43;
 }
 
+.myNavbar {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  background-color: #fff;
+  transition: all 0.2s linear;
+}
+
+.myNavbar.headerClass {
+  border-bottom: 5px solid #007791;
+}
+
 .myNavbar .navbar-brand {
   flex-grow: 1;
 }
