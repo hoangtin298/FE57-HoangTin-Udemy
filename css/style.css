@@ -443,6 +443,17 @@ body {
   font-weight: bold;
 }
 
+.myCourse .myTab .card .card-title {
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @media screen and (max-width: 992px) {
   .myCourse .content {
     display: none !important;
@@ -547,6 +558,17 @@ body {
   color: #29303b;
   font-size: 15px;
   font-weight: bold;
+}
+
+.myStudent .card .card-title {
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .myBanner {
@@ -695,6 +717,14 @@ body {
   font-size: 16px;
   font-weight: normal;
   line-height: 1.43;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media screen and (max-width: 576px) {

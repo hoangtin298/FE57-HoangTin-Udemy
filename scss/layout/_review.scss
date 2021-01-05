@@ -29,6 +29,8 @@
         p {
           @include text($color-black-0, $fs-0 + 1, $fw-normal);
           line-height: $line-height-0;
+
+          @include limit-line(4);
         }
       }
     }

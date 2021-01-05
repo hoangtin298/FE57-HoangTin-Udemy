@@ -42,6 +42,10 @@
       flex: 1 0 auto;
       height: 100%;
       flex-direction: column;
+
+      .card-title {
+        @include limit-line(2);
+      }
     }
   }
 

@@ -112,6 +112,17 @@
   }
 }
 
+@mixin limit-line($number-of-line) {
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: $number-of-line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @mixin respond-to($breakpoint) {
   @if map-has-key($map: $breakpoints, $key: $breakpoint) {
     $value: map-get(
